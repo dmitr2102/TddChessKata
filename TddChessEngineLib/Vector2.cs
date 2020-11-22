@@ -4,9 +4,9 @@ namespace TddChessEngineLib
     public class Vector2
     {
         public int h;
-        public string w;
+        public Width w;
 
-        public Vector2(string W, int H)
+        public Vector2(Width W, int H)
         {
             h = H;
             w = W;

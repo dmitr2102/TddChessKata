@@ -8,7 +8,7 @@ namespace TddChessEngineLib
     {
         public Vector2 stPos { get; private set; }
 
-        public FigureCollor FigureCollor{ get; }
+        public FigureCollor FigureCollor{get; set;}
 
         public Pawn(Vector2 StartPosition, FigureCollor color)
         {
@@ -30,9 +30,17 @@ namespace TddChessEngineLib
         {
             if(startPosition == stPos)
             {
-                if(finalPosition.h - stPos.h == 1)
+                if(finalPosition.h - stPos.h == 1 && (int)finalPosition.w - (int)startPosition.w == 0)
+                {
+                    Console.WriteLine(stPos.h);
                     stPos = finalPosition;
-                return finalPosition;
+                    Console.WriteLine(stPos.h);
+                    return finalPosition;
+                }
+                else{
+                    return startPosition;
+                }
+
             }
             else{
                 return startPosition;
