@@ -12,9 +12,9 @@ namespace TddChessEngineLib
 
         public Vector2 Turn(Vector2 endPos)
         {
-            if (endPos.w == stPos.w)
+            if (endPos.w == stPos.w || endPos.h == stPos.h)
             {
-                stPos.h = endPos.h;
+                stPos = endPos;
             }
             else
             {

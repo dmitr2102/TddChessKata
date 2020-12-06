@@ -34,6 +34,7 @@ namespace TddChessEngineLibTests
         {
             var startPosition = new Vector2(Width.E, 2);
             var endPosition = new Vector2(Width.E, 3);
+
             Elephant elephant = new Elephant(startPosition);
             elephant.Turn(endPosition);
 
@@ -44,7 +45,11 @@ namespace TddChessEngineLibTests
         public void WhenElephantTurnFromE2ToF3_ThenItChangesPosition()
         {
             var startPosition = new Vector2(Width.E, 2);
+            var endPosition = new Vector2(Width.F, 3);
+            
             Elephant elephant = new Elephant(startPosition);
+
+            Assert.Throws<ArgumentException>(() => elephant.Turn(endPosition));
         }
     }
 }
