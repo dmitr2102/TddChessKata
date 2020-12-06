@@ -32,13 +32,19 @@ namespace TddChessEngineLibTests
         [Fact]
         public void WhenElephantTurnFromE2ToE3_ThenItThrowsArgumentException()
         {
+            var startPosition = new Vector2(Width.E, 2);
+            var endPosition = new Vector2(Width.E, 3);
+            Elephant elephant = new Elephant(startPosition);
+            elephant.Turn(endPosition);
 
+            Assert.Equal(elephant.stPos, endPosition);
         }
 
         [Fact]
         public void WhenElephantTurnFromE2ToF3_ThenItChangesPosition()
         {
-
+            var startPosition = new Vector2(Width.E, 2);
+            Elephant elephant = new Elephant(startPosition);
         }
     }
 }
